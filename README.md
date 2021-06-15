@@ -1,1 +1,1 @@
-# rocketSeat-front-React
+# Frontend do curso da RocketSeat
