@@ -6,8 +6,30 @@ function App() {
     return (
     <div>
 
-    <Header/>
-        <Header/>
+    <Header title="Homepage">
+        <ul>
+        <li>
+            Homepage
+        </li>
+        <li>
+            Projects
+        </li>     
+        </ul>
+    </Header>
+        <Header title="Project">
+            <ul>
+        <li>
+            Homepage
+        </li>
+                <li>
+            Login
+        </li>     
+        <li>
+            Projects
+        </li>     
+        </ul>
+
+        </Header>
     </div>
 
         )
