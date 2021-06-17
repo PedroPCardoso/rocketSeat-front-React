@@ -5,18 +5,33 @@ import './App.css';
 import api from'./services/api';
 
 function App() {
+
+
     const [projects,setProjects] = useState([]);
+
+
     useEffect(() => {
         api.get("projects").then(response => {
-          setProjects(response.data) 
+          setProjects(response.data);
         });
 
-    },    );
-    function HandleAddProject(){
+    }, []);
+
+    
+    async function HandleAddProject(){
         // projects.push(`Novo projeto ${Date.now()}`);
-        setProjects([...projects,`Novo projeto ${Date.now()}`]);
-        console.log(projects);
+        // setProjects([...projects,`Novo projeto ${Date.now()}`]);
+        const response = await api.post('projects',{ 
+            title: `Novo Projeto ${Date.now()}`,
+            owner: "Pedro Cardoso"
+
+        });
+        const project = response.data;
+
+        setProjects([...projects,project]);
     }
+
+
     return (
     <>
     <Header title="Projects"/>
